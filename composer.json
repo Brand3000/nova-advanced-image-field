@@ -1,0 +1,53 @@
+{
+    "name": "brand3000/nova-advanced-image-field",
+    "description": "An advanced image field for Nova with cropping and resizing.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "image",
+        "crop",
+        "resize",
+        "image crop",
+        "image resize",
+        "advanced",
+        "advanced image",
+        "advanced image field"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "intervention/image": "^2.7",
+        "laravel/nova": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Brand3000\\NovaAdvancedImageField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Brand3000\\NovaAdvancedImageField\\FieldServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "suggest": {
+        "ext-imagick": "Install the Imagick extension to process image using ImageMagick.",
+        "ext-gd": "Install the GD extension to process images using GD.",
+        "ext-exif": "Install the exif extension to orientate images automatically."
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/ctessier"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
