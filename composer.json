@@ -16,7 +16,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "intervention/image": "^2.7",
+        "intervention/image": "^3.1",
         "laravel/nova": "^4.0"
     },
     "autoload": {
@@ -42,12 +42,6 @@
         "ext-gd": "Install the GD extension to process images using GD.",
         "ext-exif": "Install the exif extension to orientate images automatically."
     },
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/ctessier"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }

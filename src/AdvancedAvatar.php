@@ -1,6 +1,6 @@
 <?php
 
-namespace Ctessier\NovaAdvancedImageField;
+namespace Brand3000\NovaAdvancedImageField;
 
 class AdvancedAvatar extends AdvancedImage
 {

@@ -1,11 +1,10 @@
-<h1 align="center">Nova Advanced Image Field</h1>
+The original package was adapted for Laravel 11.
 
-<p align="center">
-  <a href="https://github.styleci.io/repos/156091175?branch=2.x"><img src="https://github.styleci.io/repos/156091175/shield?branch=2.x" alt="StyleCI"></a>
-  <a href="https://packagist.org/packages/ctessier/nova-advanced-image-field"><img src="https://img.shields.io/packagist/v/ctessier/nova-advanced-image-field.svg?style=flat-square" alt="Latest Version on Packagist" /></a>
-  <a href="https://packagist.org/packages/ctessier/nova-advanced-image-field"><img src="https://img.shields.io/packagist/dm/ctessier/nova-advanced-image-field.svg?style=flat-square" alt="Total Downloads" /></a>
-  <a href="https://packagist.org/packages/ctessier/nova-advanced-image-field"><img src="https://img.shields.io/github/license/ctessier/nova-advanced-image-field?color=%23B2878B&style=flat-square" alt="License" /></a>
-</p>
+Default library is set to be GD. The Intervention Image package was updated to the version 3.
+
+The rest of this documentation was forked from the original package:
+
+<h1 align="center">Nova Advanced Image Field</h1>
 
 <p align="center"><i>An advanced image field for Nova allowing you to upload, crop and resize images</i></p>
 
