@@ -1,6 +1,6 @@
 <?php
 
-namespace Brand3000\NovaAdvancedImageField;
+namespace App\Brand3000\NovaAdvancedImageField;
 
 use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\Image;
@@ -20,11 +20,10 @@ class AdvancedImage extends Image
     /**
      * Create a new field.
      *
-     * @param string        $name
-     * @param string|null   $attribute
-     * @param string|null   $disk
-     * @param callable|null $storageCallback
-     *
+     * @param  string  $name
+     * @param  string|null  $attribute
+     * @param  string|null  $disk
+     * @param  callable|null  $storageCallback
      * @return void
      */
     public function __construct($name, $attribute = null, $disk = 'public', $storageCallback = null)
@@ -41,11 +40,9 @@ class AdvancedImage extends Image
     /**
      * Hydrate the given attribute on the model based on the incoming request.
      *
-     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
-     * @param string                                  $requestAttribute
-     * @param object                                  $model
-     * @param string                                  $attribute
-     *
+     * @param  string  $requestAttribute
+     * @param  object  $model
+     * @param  string  $attribute
      * @return void
      */
     protected function fillAttribute(NovaRequest $request, $requestAttribute, $model, $attribute)
@@ -67,13 +64,11 @@ class AdvancedImage extends Image
 
     /**
      * Prepare the field element for JSON serialization.
-     *
-     * @return array
      */
     public function jsonSerialize(): array
     {
         return array_merge(parent::jsonSerialize(), [
-            'croppable'   => $this->croppable,
+            'croppable' => $this->croppable,
             'aspectRatio' => $this->cropAspectRatio,
         ]);
     }

@@ -1,20 +1,24 @@
 <?php
 
-namespace Brand3000\NovaAdvancedImageField;
+namespace App\Brand3000\NovaAdvancedImageField;
 
-use App\Brand3000\Image\Size;
 use Illuminate\Http\UploadedFile;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Drivers\Gd;
 use Intervention\Image\ImageManager;
+
+//use Intervention\Image\Facades\Image;
 
 trait TransformableImage
 {
     /**
-     * The default driver library to use for transforming the image.
+     * The driver library to use for transforming the image.
+     *
+     * This value will override the driver configured for Intervention
+     * in the `config/image.php` file of the Laravel project.
      *
      * @var string|null
      */
-    private $driver = 'Gd';
+    private $driver = null;
 
     /**
      * Indicates if the image is croppable.
@@ -185,12 +189,15 @@ trait TransformableImage
             return;
         }
 
-        //$this->image = Image::make($uploadedFile->getPathName());
-        $normalizeDriverName = 'Intervention\Image\Drivers\\'.ucfirst($this->driver).'\Driver';
         $manager = new ImageManager(
-            new $normalizeDriverName
+            new Gd\Driver()
         );
+
+        //$this->image = Image::make($uploadedFile->getPathName());
         $this->image = $manager->read($uploadedFile->getPathName());
+        $this->resizer = new Size();
+        $this->resizer->width = $this->image->width();
+        $this->resizer->height = $this->image->height();
 
         if ($this->autoOrientate) {
             $this->orientateImage();
@@ -245,19 +252,6 @@ trait TransformableImage
     }
 
     /**
-     * Resize the image.
-     *
-     * @return void
-     */
-    private function resizeImage()
-    {
-        $this->image->resize($this->width, $this->height, function ($constraint) {
-            $constraint->upsize();
-            $constraint->aspectRatio();
-        });
-    }
-
-    /**
      * Specify the size (width and height) the image should be resized to.
      *
      * @param  int|null  $width
@@ -270,5 +264,13 @@ trait TransformableImage
         $this->height = $height;
 
         return $this;
+    }
+
+    private function resizeImage()
+    {
+        $this->resizer->resizeOldImage($this->width, $this->height, function ($constraint) {
+            $constraint->upsize();
+            $constraint->aspectRatio();
+        });
     }
 }
