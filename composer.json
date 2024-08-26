@@ -16,7 +16,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "intervention/image": "^3.1",
+        "intervention/image": "^3.4.0",
         "laravel/nova": "^4.0"
     },
     "autoload": {
