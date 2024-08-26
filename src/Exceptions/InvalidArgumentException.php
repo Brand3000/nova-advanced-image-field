@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brand3000\Image\Exception;
+namespace Brand3000\Image\Exception;
 
 class InvalidArgumentException extends ImageException
 {

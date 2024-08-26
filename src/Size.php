@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Brand3000\NovaAdvancedImageField;
+namespace Brand3000\NovaAdvancedImageField;
 
-use App\Brand3000\NovaAdvancedImageField\Exception\InvalidArgumentException;
-use App\Brand3000\NovaAdvancedImageField\Exception\NotWritableException;
+use Brand3000\NovaAdvancedImageField\Exception\InvalidArgumentException;
+use Brand3000\NovaAdvancedImageField\Exception\NotWritableException;
 use Closure;
 
 class Size

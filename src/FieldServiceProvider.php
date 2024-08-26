@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brand3000\NovaAdvancedImageField;
+namespace Brand3000\NovaAdvancedImageField;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

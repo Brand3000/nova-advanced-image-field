@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brand3000\Image\Exceptions;
+namespace Brand3000\Image\Exceptions;
 
 use Exception;
 

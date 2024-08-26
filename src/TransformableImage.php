@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brand3000\NovaAdvancedImageField;
+namespace Brand3000\NovaAdvancedImageField;
 
 use Illuminate\Http\UploadedFile;
 use Intervention\Image\Drivers\Gd;
